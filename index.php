@@ -177,7 +177,6 @@ below code is used to display what you want -->
  }
 	}
 ?>
-
  <body>
        <div id="rounded">
           <img src="img/top_bg.gif" alt="top" /><div id="main" class="container">
