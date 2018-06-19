@@ -8,6 +8,8 @@ Also this is made for those who tired the ads of yify
 
 Just download and upload the code to your site and it will be working there.
 ***
+
+## demo [click here](https://rahul13.000webhostapp.com/yify-movies-php-master/yify-movies-php-master/index.php)
 ## requirements
 ```php 5```
 ***
