@@ -3,7 +3,7 @@
  <head>
        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
        <title>Yify Torrents</title>
-       <link rel="stylesheet" type="text/css" href="demo.css" />
+       <link rel="stylesheet" type="text/css" href="style.css" />
        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
        <script type="text/javascript" src="script1.js"></script>
  </head>
