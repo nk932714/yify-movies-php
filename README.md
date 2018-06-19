@@ -16,6 +16,7 @@ Just download and upload the code to your site and it will be working there.
 1. Sign up for a free [Heroku](https://heroku.com) account
 2. **Click this Deploy button** and fill in the variables you've considered above <br>
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+###NOTE : I DON'T KNOW WHY THIS IS NOT WORKING ON HEROKU. WILL FIX THIS SOON
  ***
 ## features
 It will provide Magnet link insted of torrent download link
