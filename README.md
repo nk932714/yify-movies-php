@@ -11,6 +11,14 @@ Just download and upload the code to your site and it will be working there.
 ## requirements
 ```php 5```
 ***
+## installation 
+Heroku
+	
+		1. Sign up for a free [Heroku](https://heroku.com) account
+		2. **Click this Deploy button** and fill in the variables you've considered above
+
+			[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+ ***
 ## features
 It will provide Magnet link insted of torrent download link
 Cannot be blocked by your service provider. 
