@@ -1,3 +1,4 @@
+/* only for click expand feature*/
 var coll = document.getElementsByClassName("collapsiblea");
 var i;
 
