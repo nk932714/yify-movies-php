@@ -198,7 +198,7 @@ below code is used to display what you want -->
                           for ($y = 0; $y <= $countresults; $y++) {
                                        echo '<div id="pageContent"><b><font color="blue">'.$title1[$y].'</b></font>&emsp;('.$year[$y].')&emsp;&emsp;<b>IMDB RATING - '.$imdb_rating[$y].'</b>&emsp;<font color="brown">'.$genres1[$y].'</font>';
                                        echo '<br><b> Magnet Link = </b><a href="'.$magnet_link1[$y].'">'.$magnet_link1[$y].'</a>';
-                                       echo '<br><b> Size - </b>'.$size1[$y]; echo '<br><b> Language - </b>'.$language1[$y]; 
+                                       echo '<br><b> Size - </b>'.$size1[$y]; echo '<b> Language - </b>'.$language1[$y]; 
                                        echo '<br><button class="collapsiblea">Synopsis(Click to view)</button><div class="content"><p>'.$synopsis1[$y].'</p></div>';
                                        $imns = $y+1; echo '<ln><a href="#'.$image_url[$y].'"> Click to Load Image '.$imns.'</a></ln>';
                                        echo '<div id="#'.$image_url[$y].'"></div></div>';
