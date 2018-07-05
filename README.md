@@ -9,9 +9,8 @@ Also this is made for those who tired the ads of yify
 Just download and upload the code to your site and it will be working there.
 ***
 
-## demo [click here](https://rahul13.000webhostapp.com/yify-movies-php-master/yify-movies-php-master/index.php)
 ## requirements
-```php 5```
+```php 5.5```
 ***
 ## installation 
 ####Heroku
@@ -28,6 +27,8 @@ Just download and upload the code to your site and it will be working there.
 5. Can view yotube trailer. (For mobile users, video will open in youtube app in one click on link )
 > more.. find out yourself
 ``` If you want any other feature please raise issue here ```[Click here](https://github.com/nk932714/yify-movies-php/issues)
+## DEMO [click here](https://rahul13.000webhostapp.com/yify-movies-php-master/yify-movies-php-master/index.php)
+
 ***
 ## >this script is made for knowledege purpose only 
 ***
