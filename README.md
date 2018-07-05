@@ -30,5 +30,5 @@ Just download and upload the code to your site and it will be working there.
 ## DEMO [click here](https://rahul13.000webhostapp.com/yify-movies-php-master/yify-movies-php-master/index.php)
 
 ***
-## >this script is made for knowledege purpose only 
+## This script is made for knowledege purpose only.
 ***
