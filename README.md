@@ -23,7 +23,7 @@ Just download and upload the code to your site and it will be working there.
 1. It will provide Magnet link insted of torrent download link
 2. Cannot be blocked by your service provider. 
 3. Can browse desktop brower features on mobile.
-4. Can apply filter ``` currently you can use only one filter at a time```
+4. Can apply filter ``` CURRENTLY YOU CAN USE ONLY ONE FILTER AT A TIME```
 5. Can view yotube trailer. (For mobile users, video will open in youtube app in one click on link )
 > more.. find out yourself
 ``` If you want any other feature please raise issue here ```[Click here](https://github.com/nk932714/yify-movies-php/issues)
