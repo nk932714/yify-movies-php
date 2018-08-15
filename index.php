@@ -161,7 +161,7 @@ below code is used to display what you want -->
 		{
 		$title1[] = $movie->title ;                   // Movie title from api
                 $rating1[] = $movie->rating;
-                $genres1[] = implode(",",$movie->genres);
+                $check_geners_existance =count($movie->genres);   if ( $check_geners_existance !== 0 ) { $genres1[] = implode(",",$movie->genres); } else { $genres1[] = "Empty"; } // $genres1[] = implode(",",$movie->genres);
                 $image_url[] = $movie->medium_cover_image;
                 $synopsis1[] = $movie->synopsis;
                 $imdb_code[] = $movie->imdb_code;
