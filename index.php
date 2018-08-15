@@ -177,21 +177,19 @@ below code is used to display what you want -->
                 echo '<img src="'. $matches[0][1]. '" alt="Broken-image" style="width:150px;height:200px;"><br>'; */
 	        	$torrent[] = $movie->torrents[0];
                 $torrenta = $movie->torrents[0];                             // First torrent
-                $torrenta2 = $movie->torrents[1];                             // 2nd torrent
-                $torrenta3 = $movie->torrents[2];                             // 3rd torrent
-                $torrenta4 = $movie->torrents[3];                             // 4th torrent
+                $torrents_counts11 = $torrents_counts - 1; //echo $torrents_counts11;
+                for ($x = 0; $x <= $torrents_counts11; $x++) {
+	        	    $torrent1111[$x] = 'magnet:?xt=urn:btih:'.$movie->torrents[$x]->hash;
+	        	    $quality1111[$x] = $movie->torrents[$x]->quality;
+	        	    $size1111[$x]    = $movie->torrents[$x]->size;
+	        	    $complete_torrent_info_test[$x] ='<br><b> Quality - </b>'.$quality1111[$x].'<br><b>Size -</b>'.$size1111[$x].'<br><b> Magnet Link = </b><a href="'.$torrent1111[$x].'">'.$torrent1111[$x].'</a>';
+	        	}
+	        	$complete_torrent_info1[] = implode(",",$complete_torrent_info_test);
  	        	$magnet_link1[] = 'magnet:?xt=urn:btih:' . $torrenta->hash;
- 	        	$magnet_link2[] = 'magnet:?xt=urn:btih:' . $torrenta2->hash;
- 	        	$magnet_link3[] = 'magnet:?xt=urn:btih:' . $torrenta3->hash;
- 	        	$magnet_link4[] = 'magnet:?xt=urn:btih:' . $torrenta4->hash;
- 	        	
                 $size1[] = $torrenta->size;
-                $size2[] = $torrent2->size;
-                $size3[] = $torrent3->size;
-                $size4[] = $torrent4->size;
  		//echo '<a href="' . $torrent->url . '">' . $torrent->url . '</a> (' . $torrent->size . ')<br/>'; // Torrent url and size
  }
-	} echo $torrents_counts;
+	}
 ?>
  <body>
        <div id="rounded">
@@ -215,8 +213,8 @@ below code is used to display what you want -->
                                        echo '<div id="pageContent"><b><font color="blue">'.$title1[$y].'</b></font>&emsp;('.$year[$y].')&emsp;&emsp;<b>IMDB RATING - '.$imdb_rating[$y].'</b>&emsp;<font color="brown">'.$genres1[$y].'</font>';
                                        echo '<br><b> Magnet Link = </b><a href="'.$magnet_link1[$y].'">'.$magnet_link1[$y].'</a>';
                                        echo '<br><b> Size - </b>'.$size1[$y];  echo '&emsp;&emsp;<b> Language - </b>'.$language1[$y];echo '<ln><a href="#LANGUAGE'.$orignal_link_url[$y].'">check language</a></ln>'; echo '<div class="inline" id="#LANGUAGE'.$orignal_link_url[$y].'"></div>'; echo '<b> Youtube Trailer - </b><a href="https://www.youtube.com/watch?v='.$yt_trailer_code1[$y].'"> View 1</a>';
-                                       echo '<br><button class="collapsiblea">Synopsis(Click to view)</button><div class="content"><p>'.$synopsis1[$y].'</p></div>';
-                                       $imns = $y+1; echo '<ln><a href="#'.$image_url[$y].'"> Click to Load Image '.$imns.'</a></ln>';
+                                       echo '<br><button class="collapsiblea">Synopsis(Click to view)</button><div class="content"><p>'.$synopsis1[$y].'</p></div>';    echo '<button class="collapsiblea">More Magnet Links</button><div class="content"><p>'.$complete_torrent_info1[$y].'</p></div>';
+                                       $imns = $y+1; echo '<ln><a id="lefti" href="#'.$image_url[$y].'"> Click to Load Image '.$imns.'</a></ln>';
                                        echo '<div id="#'.$image_url[$y].'"></div></div>';
                                                                    }
                   ?>
