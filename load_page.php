@@ -1,19 +1,32 @@
 <?php
 
-if(!$_POST['page']) die("0");
-//$page = (int)$_POST['page'];
-$image_url = $_POST['page'];
-$image_url = str_replace('#','',$image_url);
-//$image_url = str_replace('?pageContent2','',$image_url);
+//if(!$_POST['page']) die("0");
+$request = $_POST['page'];
+$request2 = str_replace('#','',$request);
+$request2 = str_replace('LANGUAGE','',$request2);
 
-//$image_url= 'https://yts.am/assets/images/movies/'.$_POST['page'].'medium-cover.jpg';
-//if (file_exists('pages/page_'.$page.'.html')) {
-
+if (strpos($request, 'movies') !== false) {
+$image_url = $request2;
 $envc = file_get_contents($image_url);
 $imageDataEncoded = base64_encode($envc);
-
 echo '<img src="data:image/gif;base64,'.$imageDataEncoded.'" />';
+}
 
-//}
-//else echo 'There is no such page!';
+if (strpos($request, 'LANGUAGE') !== false) {
+    $re = '/<span title="Language" class="icon-volume-medium"><\/span> (.*?) <div><\/div>/m';
+    $str = file_get_contents($request2);
+    preg_match_all($re, $str, $matches);
+    //Print_r($matches);
+    $language_post_request_result = implode (",",$matches[0]);
+    echo strip_tags($language_post_request_result);
+}
+
+
+
+
+/* 
+if (strpos($request, '') !== false) {
+    echo '';
+}
+*/
 ?>
