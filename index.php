@@ -214,8 +214,8 @@ below code is used to display what you want -->
                                        echo '<br><b> Magnet Link = </b><a href="'.$magnet_link1[$y].'">'.$magnet_link1[$y].'</a>';
                                        echo '<br><b> Size - </b>'.$size1[$y];  echo '&emsp;&emsp;<b> Language - </b>'.$language1[$y];echo '<ln><a href="#LANGUAGE'.$orignal_link_url[$y].'">check language</a></ln>'; echo '<div class="inline" id="#LANGUAGE'.$orignal_link_url[$y].'"></div>'; echo '<b> Youtube Trailer - </b><a href="https://www.youtube.com/watch?v='.$yt_trailer_code1[$y].'"> View 1</a>';
                                        echo '<br><button class="collapsiblea">Synopsis(Click to view)</button><div class="content"><p>'.$synopsis1[$y].'</p></div>';    echo '<button class="collapsiblea">More Magnet Links</button><div class="content"><p>'.$complete_torrent_info1[$y].'</p></div>';
-                                       $imns = $y+1; echo '<ln><a id="lefti" href="#'.$image_url[$y].'"> Click to Load Image '.$imns.'</a></ln>';
-                                       echo '<div id="#'.$image_url[$y].'"></div></div>';
+                                       $imns = $y+1; echo '<ln><a id="lefti" href="#'.$image_url[$y].'"> Click to Load Image '.$imns.'</a></ln>'; echo '&emsp;&emsp;';  echo '<ln><a id="lefti" href="#SCREENSHOTS'.$imdb_code[$y].'"> Click to Load screenshots '.$imns.'</a></ln>';
+                                       echo '<div id="#'.$image_url[$y].'"></div>';   echo '<div id="#SCREENSHOTS'.$imdb_code[$y].'"></div></div>';
                                                                    }
                   ?>
 
