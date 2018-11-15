@@ -28,8 +28,14 @@ if (strpos($request, 'SCREENSHOTS') !== false) {
     $string1 = $matches[1];
     echo '<img height=100 width=100 src='.implode('/><img height=100 width=100 src=',$string1).'/>';
 }
-
-
+if (strpos($request, 'RIPs') !== false) {
+    $re = '/<p class="hidden-xs hidden-sm">(.*?)<div class="bottom-info">/s'; 
+    $str = file_get_contents($request2);
+    preg_match_all($re, $str, $matches);
+    //Print_r($matches);
+    $language_post_request_result = implode (",",$matches[1]);
+    echo strip_tags($language_post_request_result);
+}
 
 /* 
 if (strpos($request, '') !== false) {
