@@ -30,7 +30,7 @@ Just download and upload the code to your site and it will be working there.
 1. It will provide Magnet link insted of torrent download link
 2. Cannot be blocked by your service provider. 
 3. Can browse desktop brower features on mobile.
-4. Can apply filter ``` CURRENTLY YOU CAN USE ONLY ONE FILTER AT A TIME```
+4. Can apply filter ``` You have to select the filter again if you're submitting the values again```
 5. Can view yotube trailer. (For mobile users, video will open in youtube app in one click on link )
 6. You can watch the screenshots of movies.
 7. You can also check the language from language button. This button is added because yify api is not providing the true language for users. You must check the language before download movie. 
