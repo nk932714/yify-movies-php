@@ -4,6 +4,8 @@ $request = $_POST['page'];
 $request2 = str_replace('#','',$request);
 $request2 = str_replace('LANGUAGE','',$request2);
 $request2 = str_replace('SCREENSHOTS','',$request2);
+$request2 = str_replace('RIPs','',$request2);
+$request2 = str_replace('SUBs','https://www.yifysubtitles.com/movie-imdb/',$request2);
 
 if (strpos($request, 'movies') !== false) {
 $image_url = $request2;
@@ -36,7 +38,19 @@ if (strpos($request, 'RIPs') !== false) {
     $language_post_request_result = implode (",",$matches[1]);
     echo strip_tags($language_post_request_result);
 }
-
+if (strpos($request, 'SUBs') !== false) {
+    $re = '/<div class="table-responsive">(.*?)<\/table><\/div>/m';
+    $str = file_get_contents($request2);
+    $countSub = preg_match_all($re, $str, $matches);
+    $subtitles = str_replace('href="','href="https://www.yifysubtitles.com/',$matches[0][0]);
+    $subtitles = str_replace('<th>uploader</th>','',$subtitles);
+    $subtitles1 = str_replace('<th>other</th>','',$subtitles);
+    $subtitles1 = str_replace('<th>download</th>','',$subtitles1);
+    $subtitles1 = str_replace('"><span class="text-muted">','.zip"><span class="text-muted">',$subtitles1);
+    $subtitles1 = str_replace('/subtitles/','subtitle/',$subtitles1);
+    if ($countSub>=1) {echo $subtitles1;} else { echo "No Subtitles found please search on Google"; }
+    
+}
 /* 
 if (strpos($request, '') !== false) {
     echo '';
