@@ -160,3 +160,8 @@ ln a:hover, ln a:active {
         font-size:18px !important;
     }
 }
+/* subtitles css */
+tr:nth-child(even) {background-color: #DFD9D9;}
+.other-cell {
+   display:none;
+}
