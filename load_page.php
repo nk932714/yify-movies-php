@@ -48,6 +48,8 @@ if (strpos($request, 'SUBs') !== false) {
     $subtitles1 = str_replace('<th>download</th>','',$subtitles1);
     $subtitles1 = str_replace('"><span class="text-muted">','.zip"><span class="text-muted">',$subtitles1);
     $subtitles1 = str_replace('/subtitles/','subtitle/',$subtitles1);
+    $re02 = '/<td class="other-cell"><\/td>(.*?)download<\/a><\/td>/s';
+    $subtitles1 = preg_replace($re02, '', $subtitles1);
     if ($countSub>=1) {echo $subtitles1;} else { echo "No Subtitles found please search on Google"; }
     
 }
