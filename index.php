@@ -7,18 +7,18 @@
        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
        <script type="text/javascript" src="script1.js"></script>
  </head>
- <?php
+  <?php
         //get input variables from user
-         $pagea = $_GET["page"];
-            if (!empty($pagea)) { $page1 = $pagea; }
-             else{ $page1 = 1; }
-         $quality = $_GET["quality"];
-         $genre = $_GET["genre"];
-         $rating = $_GET["rating"];
-         $sort_by = $_GET["sort_by"];
-         $query_term = $_GET["query_term"];
-         $query_term = mb_strtolower($query_term); //convert upper case to lower case
-         $query_term = urlencode($query_term);
+
+        if (isset($_GET['page'])) { $pagea = $_GET["page"]; $page1 = $pagea; 	}     else { $page1 = 1;      }     
+        if (isset($_GET['quality'])) { $quality = $_GET["quality"];	     	}     else { $quality = ""; 	 }     
+        if (isset($_GET['genre']))   { $genre = $_GET["genre"];			}     else {	$genre = "";     }
+        if (isset($_GET['rating']))  { $rating = $_GET["rating"];	 	}     else {	$rating = "";    }
+        if (isset($_GET['sort_by'])) {	$sort_by = $_GET["sort_by"];  		}     else {	$sort_by = "";   }
+        if (isset($_GET['query_term'])) {  $query_term = $_GET["query_term"]; $query_term = mb_strtolower($query_term); /*convert upper case to lower case*/ $query_term = urlencode($query_term); }   else { $query_term = "";	}
+        
+        
+        
         // main code starts below
           $yts = new YTS();
           $movies = $yts->listMovies($quality, 20, $page1, $query_term, $rating, $genre, $sort_by); // All quality, limit etc
@@ -35,7 +35,7 @@
 	                      $query_term = 0,                             // $query_term Used for movie search, matching on: Movie Title/IMDb Code, Actor Name/IMDb Code, Director Name/IMDb Code
                  	      $minimum_rating = 0,                         // $minimum_rating Used to filter movie by a given minimum IMDb rating
 	                      $genre = '',                                 // $genre Used to filter by a given genre (See http://www.imdb.com/genre/ for full list)
-                       	  $sort_by = 'date-added',                     // $sort_by Sorts the results by chosen value
+                       	      $sort_by = 'date-added',                     // $sort_by Sorts the results by chosen value
 	                      $order_by = 'desc',                          // $order_by Orders the results by either Ascending or Descending order
                        	      $with_rt_ratings = false                     // $with_rt_ratings Returns the list with the Rotten Tomatoes rating included
 	                            )
