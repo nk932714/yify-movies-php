@@ -42,7 +42,7 @@ if (strpos($request, 'SUBs') !== false) {
     $re = '/<div class="table-responsive">(.*?)<\/table><\/div>/m';
     $str = file_get_contents($request2);
     $countSub = preg_match_all($re, $str, $matches);
-    $subtitles = str_replace('href="','href="https://www.yifysubtitles.com/',$matches[0][0]);
+    if($countSub >=1){        $subtitles = str_replace('href="','href="https://www.yifysubtitles.com/',$matches[0][0]); } else {    $subtitles = ""; }
     $subtitles = str_replace('<th>uploader</th>','',$subtitles);
     $subtitles1 = str_replace('<th>other</th>','',$subtitles);
     $subtitles1 = str_replace('<th>download</th>','',$subtitles1);
