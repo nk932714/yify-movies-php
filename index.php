@@ -218,7 +218,7 @@ below code is used to display what you want -->
                                        echo '<div id="#'.$image_url[$y].'"></div>';   echo '<div id="#SCREENSHOTS'.$imdb_code[$y].'"></div>'; echo '<div id="#SUBs'.$imdb_code[$y].'"></div></div>';                                                                   
 			  }
                   ?>
-
+                   <li><a href="<?php echo $full_url1; ?>">Reload</a></li><li> <li><a href="<?php $page2 = $page1 + 1; $next_page = $full_url1.'?page='.$page2."&quality=".$quality."&genre=".$genre."&rating=".$rating."&sort_by=".$sort_by."&query_term=".$query_term;  echo $next_page ?>">Next Page</a></li><li><li><a href="<?php $page3 = $page1 - 1; $prev_page = $full_url1.'?page='.$page3."&quality=".$quality."&genre=".$genre."&rating=".$rating."&sort_by=".$sort_by."&query_term=".$query_term; echo $prev_page ?>">Previous Page</a></li><li>
         </div>
   <div class="clear"></div> 
        <img src="img/bottom_bg.gif" alt="bottom" /></div>
