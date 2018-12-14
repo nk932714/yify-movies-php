@@ -34,7 +34,7 @@ a:hover{
 
 .container{
 	background-color:#FFFFFF;
-	padding:10px 20px 40px 20px; /*for bottom navigation buttons*/
+	padding:10px 20px 40px 20px;
 }
 
 h1{
@@ -58,7 +58,7 @@ li{
 	list-style:none;
 	display:block;
 	float:left;
-	width:80px;
+	/* width:80px; */
 }
 
 li a,li a:visited{
@@ -90,7 +90,7 @@ li a:hover{
 	-moz-border-radius: 5px;
 	-khtml-border-radius: 5px;
 	-webkit-border-radius: 5px;
-	border-radius: 5px;
+	border-radius: 15px;
 }
 
 #loading{
@@ -209,13 +209,6 @@ label:active:after {
 	width: 60px;
 }
 
-// centering
-body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 50vh;
-}
 /* checkbox css end*/
 /*position of switch*/
 label {
