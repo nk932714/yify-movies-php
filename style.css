@@ -165,3 +165,63 @@ tr:nth-child(even) {background-color: #DFD9D9;}
 .other-cell {
    display:none;
 }
+
+/* checkbox css start */
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -2222px;
+	width: 50px;
+	height: 25px;
+	background: grey;
+	display: block;
+	border-radius: 50px;
+	position: relative;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 7px;
+	width: 15px;
+	height: 15px;
+	background: #fff;
+	border-radius: 40px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: #bada55;
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 60px;
+}
+
+// centering
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50vh;
+}
+/* checkbox css end*/
+/*position of switch*/
+label {
+    /* Other styling.. */
+    text-align: right;
+    clear: both;
+    float:left;
+    margin-right:2px;
+}
