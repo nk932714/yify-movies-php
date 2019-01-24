@@ -1,4 +1,4 @@
-# yify-movies-php
+# Yify Movies & Yify Subtitles through php 
 
 This is mainly created for those who are facing yify site blocking issue by thair service providers.
 Also this is made for those who tired the ads of yify 
