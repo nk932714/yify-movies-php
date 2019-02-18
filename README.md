@@ -13,7 +13,7 @@ Just download and upload the code to your site and it will be working there.
 ```php 5```
 ***
 ## Installation 
-####Heroku (free)
+####Heroku (free) (NOT WORKING NOW)(WILL FIX THIS SOON)
 1. Sign up for a free [Heroku](https://heroku.com) account
 2. **Click this Deploy button** and fill in the variables you've considered above <br>
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
