@@ -4,6 +4,8 @@
        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
        <title>Yify Torrents</title>
        <link rel="stylesheet" type="text/css" href="style.css" /> <!--to make language check inline --><style>div.inline { float:right; }.clearBoth { clear:both; }</style>
+       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> <!--youtube in site preview for pc and mobile in app preview in mob devices -->
+       <script type="text/javascript" src="youtube.js"></script> <!--youtube in site preview for pc and mobile in app preview in mob devices -->	 
        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
        <script type="text/javascript" src="script1.js"></script>
  </head>
@@ -212,12 +214,13 @@ below code is used to display what you want -->
                           for ($y = 0; $y <= $countresults; $y++) {
                                        echo '<div id="pageContent"><b><font color="blue">'.$title1[$y].'</b></font>&emsp;('.$year[$y].')&emsp;&emsp;<b>IMDB RATING - '.$imdb_rating[$y].'</b>&emsp;<font color="brown">'.$genres1[$y].'</font>';
                                        echo '<br><b> Magnet Link = </b><a href="'.$magnet_link1[$y].'">'.$magnet_link1[$y].'</a>';
-                                       echo '<br><b> Size - </b>'.$size1[$y];   echo '&emsp;&emsp;<b> Youtube Trailer - </b><a href="https://www.youtube.com/watch?v='.$yt_trailer_code1[$y].'"> View 1</a>'; echo '&emsp;&emsp;<b> Language - </b>'/*.$language1[$y]*/;echo '<ln><a href="#LANGUAGE'.$orignal_link_url[$y].'">check language</a></ln>'; echo '<div class="inline" id="#LANGUAGE'.$orignal_link_url[$y].'"></div>';
+                                       echo '<br><b> Size - </b>'.$size1[$y];   if(empty($yt_trailer_code1)){ echo '&emsp;&emsp;<b> Youtube Trailer - </b><a class="youtube" href="https://www.youtube.com/embed/?listType=search&list='.$title1[$y].'"> View Trailer</a>'; } else{ echo '&emsp;&emsp;<b> Youtube Trailer - </b><a class="youtube" href="https://www.youtube.com/watch?v='.$yt_trailer_code1[$y].'"> View Trailer</a>'; } echo '&emsp;&emsp;<b> Language - </b>'/*.$language1[$y]*/;echo '<ln><a href="#LANGUAGE'.$orignal_link_url[$y].'">check language</a></ln>'; echo '<div class="inline" id="#LANGUAGE'.$orignal_link_url[$y].'"></div>';
                                        echo '<br><button class="collapsiblea">Synopsis(Click to view)</button><div class="content"><p>'.$synopsis1[$y].'</p></div>';    echo '<button class="collapsiblea">More Magnet Links</button><div class="content"><p>'.$complete_torrent_info1[$y].'</p></div>';
                                        $imns = $y+1; echo '<ln><a id="lefti" class="pqr" href="#'.$image_url[$y].'"> Click to Load Image '.$imns.'</a></ln>'; echo '&emsp;&emsp;';  echo '<ln><a id="lefti" href="#SCREENSHOTS'.$imdb_code[$y].'"> Click to Load screenshots '.$imns.'</a></ln>';echo'&emsp;&emsp;<b>Rips - </b><ln><a href="#RIPs'.$orignal_link_url[$y].'">check RIPs</a></ln>'; echo '<div class="inline" id="#RIPs'.$orignal_link_url[$y].'"></div>';echo'&emsp;&emsp;<b>Subtitles - </b><ln><a href="#SUBs'.$imdb_code[$y].'">check SUBs</a></ln>';
                                        echo '<div id="#'.$image_url[$y].'"></div>';   echo '<div id="#SCREENSHOTS'.$imdb_code[$y].'"></div>'; echo '<div id="#SUBs'.$imdb_code[$y].'"></div></div>';                                                                   
 			  }
                   ?>
+	 	   <div id="mPlayer">  <div> </div>  </div> <!-- these divs for youtube popup and can be defined anywhere if there is problem in css then will display the video link in defined location -->
                    <li><a href="<?php echo $full_url1; ?>">Reload</a></li><li> <li><a href="<?php $page2 = $page1 + 1; $next_page = $full_url1.'?page='.$page2."&quality=".$quality."&genre=".$genre."&rating=".$rating."&sort_by=".$sort_by."&query_term=".$query_term;  echo $next_page ?>">Next Page</a></li><li><li><a href="<?php $page3 = $page1 - 1; $prev_page = $full_url1.'?page='.$page3."&quality=".$quality."&genre=".$genre."&rating=".$rating."&sort_by=".$sort_by."&query_term=".$query_term; echo $prev_page ?>">Previous Page</a></li><li>
         </div>
   <div class="clear"></div> 
