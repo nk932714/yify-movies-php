@@ -21,7 +21,7 @@ Just download and upload the code to your site and it will be working there.
 4. wait till deployment finised.
 5. now open <your app name>.herokuapp.com  ( example:- http://example.herokuapp.com )
 6. Enjoy ad-free version of yify.
-###NOTE : Fixed working perfactly on heroku.
+###NOTE : not working  on heroku.
  ***
  #### 000web (free)(99.8% uptime) (recommended because of uptime)
  1. sign up for a free account at [000webhost](https://www.000webhost.com/1142879.html)
