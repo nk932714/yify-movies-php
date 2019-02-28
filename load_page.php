@@ -6,6 +6,7 @@ $request2 = str_replace('LANGUAGE','',$request2);
 $request2 = str_replace('SCREENSHOTS','',$request2);
 $request2 = str_replace('RIPs','',$request2);
 $request2 = str_replace('SUBs','https://www.yifysubtitles.com/movie-imdb/',$request2);
+$request2 = str_replace('ytlikes','',$request2);
 
 if (strpos($request, 'movies') !== false) {
 $image_url = $request2;
@@ -50,8 +51,20 @@ if (strpos($request, 'SUBs') !== false) {
     $subtitles1 = str_replace('/subtitles/','subtitle/',$subtitles1);
     $re02 = '/<td class="other-cell"><\/td>(.*?)download<\/a><\/td>/s';
     $subtitles1 = preg_replace($re02, '', $subtitles1);
-    if ($countSub>=1) {echo $subtitles1;} else { echo "No Subtitles found please search on Google"; }
-    
+    if ($countSub>=1) {echo $subtitles1;} else { echo "No Subtitles found please search on Google"; }   
+}
+if (strpos($request, 'ytlikes') !== false) {
+    $url = "https://www.youtube.com/watch?v=".$request2;
+    $raw = file_get_contents($url);
+    $re_views = '/<div class="watch-view-count">(.*?)views<\/div>/m';
+    $re_likes = '/"like this video along with(.*?)other/m';
+    $re_dislikes = '/"dislike this video along with(.*?)other/m';
+    $count_views = preg_match_all($re_views, $raw, $matches_views);
+    preg_match_all($re_likes, $raw, $matches_likes);
+    preg_match_all($re_dislikes, $raw, $matches_dislikes);
+    if ($count_views>=1){ $data = 'Y-Tube: Views='.$matches_views[1][0].':: Likes &#128077= '.$matches_likes[1][0].'::Dislikes &#128078= '.$matches_dislikes[1][0];
+        echo '<p>'.$data.'</p><div id="'.$request2.'1" class="snackbar">'.$data.'</div>'; }
+    else { $data="Something went wrong"; echo '<p>'.$data.'</p><div id="'.$request2.'1" class="snackbar">'.$data.'</div>'; }
 }
 /* 
 if (strpos($request, '') !== false) {
