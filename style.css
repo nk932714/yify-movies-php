@@ -288,3 +288,9 @@ label {
         to {bottom: 0; opacity: 0;}
     }
 /* =========== simple snackbar end ===============*/
+/* =========== warning for js disabled browser start ===*/
+#noJS {
+  border-style: solid;
+  border-color: coral;
+}
+/* =========== warning for js disabled browser end ===*/
