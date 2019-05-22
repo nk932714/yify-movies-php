@@ -40,7 +40,7 @@ Just download and upload the code to your site and it will be working there.
 7. You can also check the language from language button. This button is added because yify api is not providing the true language for users. You must check the language before download movie.
 8. NO MORE ADS, CLEAN BROWSING EXPERIANCE.
 9. Now you can also download SUBTITLES for movies(single click download subtitles of Movies).
-10. See how many likes youtube trailer have got with a single click.
+10. See how many likes, dislikes, Views youtube trailer have got with a single click.
 > more.. find out yourself
 ``` If you want any other feature please raise issue here ```[Click here](https://github.com/nk932714/yify-movies-php/issues)
 ### SCREENSHOT (Screenshot added on January /30 /2019. Many more features added after that.)
