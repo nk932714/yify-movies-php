@@ -55,7 +55,9 @@ if (strpos($request, 'SUBs') !== false) {
 }
 if (strpos($request, 'ytlikes') !== false) {
     $url = "https://www.youtube.com/watch?v=".$request2;
-    $raw = file_get_contents($url);
+    $options = array(   'http'=>array(    'method'=>"GET", 'header'=>"Accept-language: en\r\n" ) );
+    $context = stream_context_create($options);
+    $raw = file_get_contents($url, false, $context);
     $re_views = '/<div class="watch-view-count">(.*?)views<\/div>/m';
     $re_likes = '/"like this video along with(.*?)other/m';
     $re_dislikes = '/"dislike this video along with(.*?)other/m';
