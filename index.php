@@ -4,9 +4,8 @@
        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
        <title>Yify Torrents</title>
        <link rel="stylesheet" type="text/css" href="style.css" /> <!--to make language check inline --><style>div.inline { float:right; }.clearBoth { clear:both; }</style>
-       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-       <script type="text/javascript" src="script1.js"></script>
        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> <!--youtube in site preview for pc and mobile in app preview in mob devices -->
+       <script type="text/javascript" src="script1.js"></script> <!-- get data with ajax requests  -->
        <script type="text/javascript" src="youtube.js"></script> <!--youtube in site preview for pc and mobile in app preview in mob devices -->
        <script> $(document).ready(function() {   $("#noJS").hide();  });  </script> <!-- Warning for JS disabled browser -->
 </head>
