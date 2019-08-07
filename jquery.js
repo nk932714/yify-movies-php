@@ -37,3 +37,40 @@ function launch_toast(para) {
        } , 2000);  //time remaining to display popup
   } 
 /* snackbar end*/
+/* suggestions for search */
+$(function(){
+    $("#query_term").focus(); //Focus on search field
+    $("#query_term").autocomplete({
+        minLength: 0,
+        delay:5,
+        source: "suggest.php",
+        focus: function( event, ui ) {
+        // this value will show in search field when you hover over suggesions list
+            $(this).val( ui.item.label ); 
+            return false;
+        },
+        select: function( event, ui ) {
+        // this value will show in search field when you click on suggesions list
+            $(this).val( ui.item.label );
+            return false;
+        },
+         appendTo: "#results",
+  open: function() {
+    var position = $("#results").position(),
+      left = position.left,
+      top = position.top;
+
+    $("#results > ul").css({
+      left: (left + 20) + "px",
+      top: (top + 4) + "px"
+    });
+
+  }
+    }).data("uiAutocomplete")._renderItem = function( ul, item ) {
+        return $("<li></li>")
+            .data( "item.autocomplete", item )
+            .append( "<a>" + (item.img?"<img class='imdbImage' src='" + item.img + "'  alt='' width='34' height='50' />":"") + "<span class='imdbTitle'>" + item.label + "</span>" + (item.cast?"<br /><span class='imdbCast'>" + item.cast + "</span>":"") + "<div class='clear'></div></a>" )
+            .appendTo( ul );
+    };
+});
+/*suggestion for search end */
