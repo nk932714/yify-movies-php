@@ -225,8 +225,29 @@ below code is used to display what you want -->
   <div class="clear"></div>
   <div id="mPlayer">  <div> </div>  </div> <!-- these divs for youtube popup and can be defined anywhere if there is problem in css then will display the video link in defined location -->
        <img src="img/bottom_bg.gif" alt="bottom" /></div>
-       <div align="center" class="demo"><a href="" target="_blank">@2018 </a></div>
+       <div align="center" class="demo"><a href="" target="_blank">@2019 </a></div>
        <script type="text/javascript" src="jquery.js"></script>
        <script type="text/javascript" src="auto.js"></script>
+       <!-- click img popup/lightbox  -->
+        <link rel="stylesheet" type="text/css" href="lightbox.css" />
+        <script type="text/javascript" src="lightbox.js"></script>
+        <script>
+        lightbox.option({
+                        'alwaysShowNavOnTouchDevices': true,
+                        'albumLabel':   "Image %1 of %2",
+                        'disableScrolling': false,
+                        'fadeDuration': 500,
+                        'fitImagesInViewport': true,
+                        'imageFadeDuration': 500,
+                        'maxWidth': ,
+                        'maxHeight': ,
+                        'positionFromTop': 50,
+                        'resizeDuration': 600,
+                        'showImageNumberLabel': true,
+                        'wrapAround': false
+                        })
+        </script>
+
+
  </body>
 </html>
