@@ -26,10 +26,15 @@ if (strpos($request, 'LANGUAGE') !== false) {
 if (strpos($request, 'SCREENSHOTS') !== false) {
     $screenshots_url_imdb = 'https://www.imdb.com/title/'.$request2.'/mediaindex';
     $str_ss = file_get_contents($screenshots_url_imdb);
-    $re_ss = '/"\nsrc="(.*?)"\n\/><\/a>/m';
+    $re_ss = '/"\nsrc="(.*?)"\n\/><\/a>/m';     /* find thumbnails */
+    $re_links_ss = '/"contentUrl": "(.*?)"/s';  /*  real image link behind thumbnails */
     preg_match_all($re_ss, $str_ss, $matches);
-    $string1 = $matches[1];
-    echo '<img height=100 width=100 src='.implode('/><img height=100 width=100 src=',$string1).'/>';
+    preg_match_all($re_links_ss, $str_ss, $matches_links);
+    $string_ss = $matches[1]; 
+    $string_link = $matches_links[1];
+    foreach( $string_link as $index => $value ) {
+                                                    echo '<a href="'.$value.'" data-lightbox="'.$request2.'" ><img  src='.$string_ss[$index].' /></a>';
+                                                 }
 }
 if (strpos($request, 'RIPs') !== false) {
     $re = '/<p class="hidden-xs hidden-sm">(.*?)<div class="bottom-info">/s'; 
