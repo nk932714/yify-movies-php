@@ -10,7 +10,7 @@ Just download and upload the code to your site and it will be working there.
 ***
 
 ## Requirements
-```php 5```
+```php 5.5 or later (Tested upto version 7.2)```
 ***
 ## Installation 
 ####Heroku (free) (NOT WORKING NOW)(WILL FIX THIS SOON)
@@ -29,9 +29,9 @@ Just download and upload the code to your site and it will be working there.
  3. Download this github repository in Zip format and uplolad to your newly created site. 
  4. Rightclick on it and Extrat zip file.
  5. Nevigate to index.php file and right click then click on View.
- > NOTE :- By default php is set to version. Please manully select php version 5.7 to avoid all types of error. I'll make this repo compatible to php version 7 as soon as possible. Thanks!
- 
  > simple isen't. Try and if you found any problem ask me.
+ #### other php sites
+  > This should work on other php based sites. If you found any error please raise an issue here.[Click here](https://github.com/nk932714/yify-movies-php/issues)
 ## Features
 1. It will provide Magnet link insted of torrent download link
 2. Cannot be blocked by your service provider. 
