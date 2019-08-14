@@ -1,5 +1,5 @@
 <?php
-if(!$_POST['page']) die("0"); //if not post die with error code 0
+if (isset($_POST['page'])) { 
 $request = $_POST['page'];
 $request2 = str_replace('#','',$request);
 $request2 = str_replace('LANGUAGE','',$request2);
@@ -12,7 +12,9 @@ if (strpos($request, 'movies') !== false) {
 $image_url = $request2;
 $envc = file_get_contents($image_url);
 $imageDataEncoded = base64_encode($envc);
-echo '<img src="data:image/gif;base64,'.$imageDataEncoded.'" />';
+//echo '<img src="data:image/gif;base64,'.$imageDataEncoded.'" />';
+$value = str_replace("medium-cover","large-cover",$image_url);
+echo '<a href="load_page.php?images='.$value.'" data-lightbox="'.rand(100,100000).'" ><img src="data:image/gif;base64,'.$imageDataEncoded.'" /></a>';
 }
 
 if (strpos($request, 'LANGUAGE') !== false) {
@@ -73,10 +75,16 @@ if (strpos($request, 'ytlikes') !== false) {
         echo '<p>'.$data.'</p><div id="'.$request2.'1" class="snackbar">'.$data.'</div>'; }
     else { $data="Something went wrong"; echo '<p>'.$data.'</p><div id="'.$request2.'1" class="snackbar">'.$data.'</div>'; }
 }
-/* 
+}
+elseif(isset($_GET['images'])) { 
+    header("Content-type: image/jpeg");
+    $url = rawurldecode($_GET['images']);
+    echo file_get_contents($url);
+}
+else{ die("Something went wrong! which we can't fix."); }
+/*
 if (strpos($request, '') !== false) {
     echo '';
 }
-$genres1[] = implode(",",$movie->genres);
 */
 ?>
