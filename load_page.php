@@ -10,7 +10,7 @@ $request2 = str_replace('ytlikes','',$request2);
 
 if (strpos($request, 'movies') !== false) {
 $image_url = $request2;
-$envc = file_get_contents($image_url);
+$envc = @file_get_contents($image_url);
 $imageDataEncoded = base64_encode($envc);
 //echo '<img src="data:image/gif;base64,'.$imageDataEncoded.'" />';
 $value = str_replace("medium-cover","large-cover",$image_url);
@@ -19,7 +19,8 @@ echo '<a href="load_page.php?images='.$value.'" data-lightbox="'.rand(100,100000
 
 if (strpos($request, 'LANGUAGE') !== false) {
     $re = '/<span title="Language" class="icon-volume-medium"><\/span> (.*?) <div><\/div>/m';
-    $str = file_get_contents($request2);
+    $str = @file_get_contents($request2, true);
+    if ($str === false) { die("Language: Something went wrong! try again after some time."); }
     preg_match_all($re, $str, $matches);
     //Print_r($matches);
     $language_post_request_result = implode (",",$matches[0]);
@@ -27,7 +28,8 @@ if (strpos($request, 'LANGUAGE') !== false) {
 }
 if (strpos($request, 'SCREENSHOTS') !== false) {
     $screenshots_url_imdb = 'https://www.imdb.com/title/'.$request2.'/mediaindex';
-    $str_ss = file_get_contents($screenshots_url_imdb);
+    $str_ss = @file_get_contents($screenshots_url_imdb, true);
+    if ($str_ss === false) { die("Screenshots: Something went wrong! try again after some time."); }
     $re_ss = '/"\nsrc="(.*?)"\n\/><\/a>/m';     /* find thumbnails */
     $re_links_ss = '/"contentUrl": "(.*?)"/s';  /*  real image link behind thumbnails */
     preg_match_all($re_ss, $str_ss, $matches);
@@ -40,7 +42,8 @@ if (strpos($request, 'SCREENSHOTS') !== false) {
 }
 if (strpos($request, 'RIPs') !== false) {
     $re = '/<p class="hidden-xs hidden-sm">(.*?)<div class="bottom-info">/s'; 
-    $str = file_get_contents($request2);
+    $str = @file_get_contents($request2, true);
+    if ($str === false) { die("Rips: Something went wrong! try again after some time."); }
     preg_match_all($re, $str, $matches);
     //Print_r($matches);
     $language_post_request_result = implode (",",$matches[1]);
@@ -48,7 +51,8 @@ if (strpos($request, 'RIPs') !== false) {
 }
 if (strpos($request, 'SUBs') !== false) {
     $re = '/<div class="table-responsive">(.*?)<\/table><\/div>/m';
-    $str = file_get_contents($request2);
+    $str = @file_get_contents($request2, true);
+    if ($str === false) { die("Subs: Something went wrong! try again after some time."); }
     $countSub = preg_match_all($re, $str, $matches);
     if($countSub >=1){        $subtitles = str_replace('href="','href="https://www.yifysubtitles.com/',$matches[0][0]); } else {    $subtitles = ""; }
     $subtitles = str_replace('<th>uploader</th>','',$subtitles);
@@ -64,7 +68,7 @@ if (strpos($request, 'ytlikes') !== false) {
     $url = "https://www.youtube.com/watch?v=".$request2;
     $options = array(   'http'=>array(    'method'=>"GET", 'header'=>"Accept-language: en\r\n" ) );
     $context = stream_context_create($options);
-    $raw = file_get_contents($url, false, $context);
+    $raw = @file_get_contents($url, false, $context);
     $re_views = '/<div class="watch-view-count">(.*?)views<\/div>/m';
     $re_likes = '/"like this video along with(.*?)other/m';
     $re_dislikes = '/"dislike this video along with(.*?)other/m';
@@ -79,12 +83,15 @@ if (strpos($request, 'ytlikes') !== false) {
 elseif(isset($_GET['images'])) { 
     header("Content-type: image/jpeg");
     $url = rawurldecode($_GET['images']);
-    echo file_get_contents($url);
+    $str = @file_get_contents($url, true);
+    echo $str;
 }
+
 else{ die("Something went wrong! which we can't fix."); }
-/*
+/* 
 if (strpos($request, '') !== false) {
     echo '';
 }
+$genres1[] = implode(",",$movie->genres);
 */
 ?>
