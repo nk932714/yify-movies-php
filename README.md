@@ -1,7 +1,10 @@
 # Yify Movies & Yify Subtitles through php 
 
 This is mainly created for those who are facing yify site blocking issue by thair service providers.
-Also this is made for those who tired the ads of yify 
+Also this is made for those who tired the ads of yify. It contains all things which needs to evaluate that weather we should download this torrent/movie or not. Eg. .1. it contains youtube trailer link .2. Imdb rating  .3.Screenshots .4. Yotube trailer likes & dislikes .5. Subtitles etc etc.
+
+yify-movies-php ( A ready made website written in php) Just download & upload to php based hosting & enjoy )
+
 ***
 
 ## Instructions ( How to use )
