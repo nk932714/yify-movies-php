@@ -39,8 +39,8 @@ function launch_toast(para) {
 /* snackbar end*/
 /* suggestions for search */
 $(function(){
-    $("#query_term").focus(); //Focus on search field
-    $("#query_term").autocomplete({
+    $("#queryTerm").focus(); //Focus on search field
+    $("#queryTerm").autocomplete({
         minLength: 0,
         delay:5,
         source: "suggest.php",
