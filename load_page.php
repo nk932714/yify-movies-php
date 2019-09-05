@@ -10,7 +10,13 @@ $request2 = str_replace('ytlikes','',$request2);
 
 if (strpos($request, 'movies') !== false) {
 $image_url = $request2;
-$envc = @file_get_contents($image_url);
+$arrContextOptions=array(
+        "ssl"=>array(
+            "verify_peer"=>false,
+            "verify_peer_name"=>false,
+            ),
+        );
+$envc = @file_get_contents($image_url, true, stream_context_create($arrContextOptions));
 $imageDataEncoded = base64_encode($envc);
 //echo '<img src="data:image/gif;base64,'.$imageDataEncoded.'" />';
 $value = str_replace("medium-cover","large-cover",$image_url);
@@ -83,7 +89,13 @@ if (strpos($request, 'ytlikes') !== false) {
 elseif(isset($_GET['images'])) { 
     header("Content-type: image/jpeg");
     $url = rawurldecode($_GET['images']);
-    $str = @file_get_contents($url, true);
+    $arrContextOptions=array(
+        "ssl"=>array(
+            "verify_peer"=>false,
+            "verify_peer_name"=>false,
+            ),
+        );  
+    $str = @file_get_contents($url, true, stream_context_create($arrContextOptions));
     echo $str;
 }
 
