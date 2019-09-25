@@ -46,6 +46,8 @@ Just download and upload the code to your site and it will be working there.
 8. NO MORE ADS, CLEAN BROWSING EXPERIANCE.
 9. Now you can also download SUBTITLES for movies(single click download subtitles of Movies).
 10. See how many likes, dislikes, Views youtube trailer have got with a single click.
+11. **AUTO SUGGEST MOVIES NAME WHILE TYPING IN SEARCH BOX.**
+12. Lightbox support. (now you can click on poster images & screenshots and see high resolution pics)
 > more.. find out yourself
 ``` If you want any other feature please raise issue here ```[Click here](https://github.com/nk932714/yify-movies-php/issues)
 ### SCREENSHOT (Screenshot added on January /30 /2019. Many more features added after that.)
