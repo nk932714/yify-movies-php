@@ -50,8 +50,9 @@ Just download and upload the code to your site and it will be working there.
 12. Lightbox support. (now you can click on poster images & screenshots and see high resolution pics)
 > more.. find out yourself
 ``` If you want any other feature please raise issue here ```[Click here](https://github.com/nk932714/yify-movies-php/issues)
-### SCREENSHOT (Screenshot added on January /30 /2019. Many more features added after that.)
+### SCREENSHOT
 ![SCREENSHOT](/img/222222222.jpg?raw=true "SCREENSHOT")
+![SCREENSHOT](/img/222222.jpg?raw=true "SCREENSHOT")
 ## DEMO [click here]() (DEMO REMOVED DUE TO SOME REASONS)
 
 ***
