@@ -1,7 +1,5 @@
-<?php         
-
-            if (isset($_GET['magnet_uri']) && !empty($_GET['magnet_uri'])) { $magnet_uri = $_GET["magnet_uri"]; $magnet_uri_placeolder = $magnet_uri; }
-            
+<?php
+            if (isset($_GET['magnet_uri']) && !empty($_GET['magnet_uri'])) { $magnet_uri = $_GET["magnet_uri"]; $images_uri = $_GET["images_uri"];  $images_uri = 'load_page.php?images='.$images_uri; }
             else { //die($magnet_uri_placeolder);	 
             
             $style = '  <style>
@@ -16,7 +14,6 @@
                         text-align:center;
                         font-family: "Quicksand", sans-serif;
                         color:white;
-                            
                         }
                         
                         .inputText{
@@ -28,7 +25,6 @@
                         color: #1e88e5;
                         border-radius:5px;
                         font-size:32px;
-                            
                         }
                         
                         .submitbox{
@@ -40,19 +36,16 @@
                         color: #1e88e5;
                         border-radius:5px;
                         font-size:32px;
-                            
                         }
                         
                         .inputText:focus{
                         outline:none;
                         box-shadow: none;
-                            
                         }
                         
                         ::placeholder{
                         font-weight: italic;
                         color:crimson;
-                            
                         }
                         .inputText:hover{
                         /*   box-shadow: 0px 0px 2px 2px gainsboro; */
@@ -73,19 +66,10 @@
                      </div>';
                     die($style.$html);
             }
-            
-            
-            
-            
-            
-            
-            
+
                         ?>
-
-
 <!doctype html>
 <html>
-
 <head>
     <title>Yify Player</title>
     <style>
@@ -97,7 +81,6 @@
             margin-right: -50%;
             transform: translate(-50%, -50%);
         }
-
         body {
             position: relative;
             height: 100vh;
@@ -105,7 +88,6 @@
         }
     </style>
 </head>
-
 <body>
     <div id="player" class="webtor" />
     <script>
@@ -121,17 +103,16 @@
                     console.log('Torrent error!')
                 }
             },
-             //poster: 'https://via.placeholder.com/150/0000FF/808080?Text=Digital.com',
-             subtitles: [
-                 {
-                     //srclang: 'en',
-                     //label: 'test',
-                     //src: 'https://raw.githubusercontent.com/andreyvit/subtitle-tools/master/sample.srt',
-                  }
-             ],
+             poster: '<?php echo $images_uri; ?>',
+            // subtitles: [
+            //     {
+            //         srclang: 'en',
+            //         label: 'test',
+            //         src: 'https://raw.githubusercontent.com/andreyvit/subtitle-tools/master/sample.srt',
+            //      }
+            // ],
         });
     </script>
     <script src="webtor_min.js" charset="utf-8"></script>
 </body>
-
 </html>
