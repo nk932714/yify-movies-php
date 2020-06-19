@@ -8,7 +8,7 @@ $request2 = str_replace('RIPs','',$request2);
 $request2 = str_replace('SUBs','https://www.yifysubtitles.com/movie-imdb/',$request2);
 $request2 = str_replace('ytlikes','',$request2);
 
-if (strpos($request, 'movies') !== false) {
+if (strpos($request, 'medium-cover') !== false) {
 $image_url = $request2;
 $arrContextOptions=array(
         "ssl"=>array(
