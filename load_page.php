@@ -75,7 +75,7 @@ if (strpos($request, 'ytlikes') !== false) {
     $options = array(   'http'=>array(    'method'=>"GET", 'header'=>"Accept-language: en\r\n" ) );
     $context = stream_context_create($options);
     $raw = @file_get_contents($url, false, $context);
-    $re_views = '/<div class="watch-view-count">(.*?)views<\/div>/m';
+    $re_views = '/"viewCount":{"simpleText":"(.*?) views"}/ms';
     $re_likes = '/"like this video along with(.*?)other/m';
     $re_dislikes = '/"dislike this video along with(.*?)other/m';
     $count_views = preg_match_all($re_views, $raw, $matches_views);
