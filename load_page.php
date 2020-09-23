@@ -81,7 +81,9 @@ if (strpos($request, 'ytlikes') !== false) {
     $count_views = preg_match_all($re_views, $raw, $matches_views);
     preg_match_all($re_likes, $raw, $matches_likes);
     preg_match_all($re_dislikes, $raw, $matches_dislikes);
-    if ($count_views>=1){ $data = 'Y-Tube: Views='.$matches_views[1][0].':: Likes &#128077= '.$matches_likes[1][0].'::Dislikes &#128078= '.$matches_dislikes[1][0];
+    if ($count_views>=1 && @$matches_likes[1][0] !=''){ $data = 'Y-Tube: Views='.$matches_views[1][0].':: Likes &#128077= '.$matches_likes[1][0].'::Dislikes &#128078= '.$matches_dislikes[1][0];
+        echo '<p>'.$data.'</p><div id="'.$request2.'1" class="snackbar">'.$data.'</div>'; }
+    elseif ($count_views>=1){ $data = 'Y-Tube: Views='.$matches_views[1][0].':: Likes &#128077= HIDDEN ::Dislikes &#128078= HIDDEN';
         echo '<p>'.$data.'</p><div id="'.$request2.'1" class="snackbar">'.$data.'</div>'; }
     else { $data="Something went wrong"; echo '<p>'.$data.'</p><div id="'.$request2.'1" class="snackbar">'.$data.'</div>'; }
 }
