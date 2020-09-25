@@ -5,7 +5,7 @@ $request2 = str_replace('#','',$request);
 $request2 = str_replace('LANGUAGE','',$request2);
 $request2 = str_replace('SCREENSHOTS','',$request2);
 $request2 = str_replace('RIPs','',$request2);
-$request2 = str_replace('SUBs','https://www.yifysubtitles.com/movie-imdb/',$request2);
+$request2 = str_replace('SUBs','https://www.yifysubtitles.org/movie-imdb/',$request2);
 $request2 = str_replace('ytlikes','',$request2);
 
 if (strpos($request, 'medium-cover') !== false) {
@@ -60,10 +60,11 @@ if (strpos($request, 'SUBs') !== false) {
     $str = @file_get_contents($request2, true);
     if ($str === false) { die("Subs: Something went wrong! try again after some time."); }
     $countSub = preg_match_all($re, $str, $matches);
-    if($countSub >=1){        $subtitles = str_replace('href="','href="https://www.yifysubtitles.com/',$matches[0][0]); } else {    $subtitles = ""; }
+    if($countSub >=1){        $subtitles = str_replace('href="','href="https://www.yifysubtitles.org/',$matches[0][0]); } else {    $subtitles = ""; }
     $subtitles = str_replace('<th>uploader</th>','',$subtitles);
     $subtitles1 = str_replace('<th>other</th>','',$subtitles);
     $subtitles1 = str_replace('<th>download</th>','',$subtitles1);
+    $subtitles1 = str_replace('<td class="uploader-cell"><a','<td class="uploader-cell"><aa',$subtitles1);
     $subtitles1 = str_replace('"><span class="text-muted">','.zip"><span class="text-muted">',$subtitles1);
     $subtitles1 = str_replace('/subtitles/','subtitle/',$subtitles1);
     $re02 = '/<td class="other-cell"><\/td>(.*?)download<\/a><\/td>/s';
