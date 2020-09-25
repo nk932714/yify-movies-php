@@ -56,7 +56,7 @@ if (strpos($request, 'RIPs') !== false) {
     echo strip_tags($language_post_request_result);
 }
 if (strpos($request, 'SUBs') !== false) {
-    $re = '/<div class="table-responsive">(.*?)<\/table><\/div>/m';
+    $re = '/<div class="table-responsive">(.*?)<\/table>\s+<\/div>/ms';
     $str = @file_get_contents($request2, true);
     if ($str === false) { die("Subs: Something went wrong! try again after some time."); }
     $countSub = preg_match_all($re, $str, $matches);
