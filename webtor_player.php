@@ -87,32 +87,13 @@
             background-color: gray;
         }
     </style>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@webtor/embed-sdk-js/dist/index.min.js" charset="utf-8" async></script>
 </head>
 <body>
-    <div id="player" class="webtor" />
-    <script>
-        window.webtor = window.webtor || [];
-        window.webtor.push({
-            id: 'player',
-            magnet: '<?php echo $magnet_uri; ?>&dn=Player&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F',
-            on: function(e) {
-                if (e.name == window.webtor.TORRENT_FETCHED) {
-                    console.log('Torrent fetched!')
-                }
-                if (e.name == window.webtor.TORRENT_ERROR) {
-                    console.log('Torrent error!')
-                }
-            },
-             poster: '<?php echo $images_uri; ?>',
-            // subtitles: [
-            //     {
-            //         srclang: 'en',
-            //         label: 'test',
-            //         src: 'https://raw.githubusercontent.com/andreyvit/subtitle-tools/master/sample.srt',
-            //      }
-            // ],
-        });
-    </script>
-    <script src="webtor_min.js" charset="utf-8"></script>
+<video crossorigin="anonymous" src='<?php echo $magnet_uri; ?>&dn=Sintel&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F' controls data-config='{"baseUrl": "https://webtor.io"}' poster="<?php $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http"; $host = $_SERVER['HTTP_HOST']; $current_url = $_SERVER['REQUEST_URI']; $base_url = strtok($current_url, '?'); $full_url = $protocol . '://' . $host . dirname($base_url) . '/';  echo $full_url; echo $images_uri; ?>" crossorigin="anonymous"></video>
+    <script src="https://cdn.jsdelivr.net/npm/@webtor/embed-sdk-js/dist/index.min.js" charset="utf-8" async></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a61a1d1ebe07ea9',t:'MTc2NDQxNDM0OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"647b13b578d2407caf0637f0e11ad6a2","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+
 </body>
 </html>
