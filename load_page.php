@@ -36,8 +36,8 @@ if (strpos($request, 'SCREENSHOTS') !== false) {
     $screenshots_url_imdb = 'https://www.imdb.com/title/'.$request2.'/mediaindex';
     $str_ss = @file_get_contents($screenshots_url_imdb, true);
     if ($str_ss === false) { die("Screenshots: Something went wrong! try again after some time."); }
-    $re_ss = '/"\nsrc="(.*?)"\n\/><\/a>/m';     /* find thumbnails */
-    $re_links_ss = '/"contentUrl": "(.*?)"/s';  /*  real image link behind thumbnails */
+    $re_ss = '/height="100%" loading="eager" src="(.*?)" srcSet=/';     /* find thumbnails */
+    $re_links_ss = '/1.5x, (.*?) 2x"/';  /*  real image link behind thumbnails */
     preg_match_all($re_ss, $str_ss, $matches);
     preg_match_all($re_links_ss, $str_ss, $matches_links);
     $string_ss = $matches[1]; 
