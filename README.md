@@ -14,10 +14,10 @@ Just download and upload the code to your site and it will be working there.
 ***
 
 ## Requirements
-```php 5.5 or later (Tested upto version 7.2)```
+```php 5.5 or later (Tested upto version 8.3.19)```
 ***
 ## Installation 
-####Heroku (free) (NOT WORKING NOW)(WILL FIX THIS SOON)
+ #### Heroku (free) (NOT WORKING NOW)(WILL FIX THIS SOON) 
 1. Sign up for a free [Heroku](https://heroku.com) account
 2. **Click this Deploy button** and fill in the variables you've considered above <br>
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
@@ -25,10 +25,10 @@ Just download and upload the code to your site and it will be working there.
 4. wait till deployment finised.
 5. now open <your app name>.herokuapp.com  ( example:- http://example.herokuapp.com )
 6. Enjoy ad-free version of yify.
-> ###NOTE : not working  on heroku.
- ***
- #### 000web (free)(99.8% uptime) (recommended because of uptime)
- 1. sign up for a free account at [000webhost](https://www.000webhost.com/1142879.html)
+> ###NOTE : not working  on heroku.~~
+ ***~~
+ #### Anyphp free hosting website 
+ 1. sign up for a free account at any free php site (google it)
  2. after complete sign up. Login to your account & click on FILE MANAGER and then click on UPLOAD FILES.
  3. Download this github repository in Zip format and uplolad to your newly created site. 
  4. Rightclick on it and Extrat zip file.
@@ -57,8 +57,9 @@ Just download and upload the code to your site and it will be working there.
 ![SCREENSHOT](/img/222222.jpg?raw=true "SCREENSHOT")
 ![SCREENSHOT](/img/webtor_ss.png?raw=true "SCREENSHOT")
 
-## DEMO [click here]() (DEMO REMOVED DUE TO SOME REASONS)
-
+## DEMO 
+Demo cannot be provided its for eductional purpose. Do not use for any other purpose.
 ***
-## This script is made for knowledege purpose only.
+## This script is made for EDUCATIONAL purpose only.
+
 ***
