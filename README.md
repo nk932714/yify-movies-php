@@ -60,6 +60,16 @@ Just download and upload the code to your site and it will be working there.
 ## DEMO 
 Demo cannot be provided its for eductional purpose. Do not use for any other purpose.
 ***
+## Star History
+
+<a href="https://www.star-history.com/?repos=nk932714%2Fyify-movies-php&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=nk932714/yify-movies-php&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=nk932714/yify-movies-php&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=nk932714/yify-movies-php&type=date&legend=top-left" />
+ </picture>
+</a>
+
 ## This script is made for EDUCATIONAL purpose only.
 
 ***
